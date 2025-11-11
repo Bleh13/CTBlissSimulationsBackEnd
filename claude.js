@@ -1,4 +1,6 @@
-// server/claude.js
+import dotenv from 'dotenv';
+dotenv.config();
+
 import Anthropic from '@anthropic-ai/sdk';
 import { supabase } from './firebaseClient.js';
 import crypto from 'crypto';
