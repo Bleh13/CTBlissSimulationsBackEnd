@@ -1,13 +1,16 @@
-// server/index.js (or wherever your API lives)
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import { generateClaudeResponse } from './claude.js';
 import { supabase } from './firebaseClient.js';
-import cors from 'cors';  
+import cors from 'cors';
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
+
 
 app.post('/claude', async (req, res) => {
   console.log('[CLAUDE API] Request received:', {
